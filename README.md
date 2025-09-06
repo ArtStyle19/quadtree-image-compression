@@ -1,12 +1,20 @@
 # 🌀 Quadtree Image Compression
 
-## Developed by Jorge Guillermo Olarte Quispe
+---
+
+## Developed by
+
+## Jorge Guillermo Olarte Quispe
+
+---
 
 ## Universidad Nacional del Altiplano – Ingeniería de Sistemas
 
-A lightweight **C++ / OpenGL** app to visualize images using a **quadtree**.  
-It splits the image into blocks: **large blocks** for flat areas, **small blocks** for detail.  
-Play with sliders, zoom/pan the canvas, recolor the grid, and export the result as PNG.
+---
+
+A fast and interactive C++ / OpenGL tool to explore image compression with quadtrees.
+The algorithm adaptively divides the image: big squares in uniform areas, tiny squares where details matter.
+You can adjust parameters live, zoom and pan the canvas, customize colors, and export your compressed image as a PNG.
 
 ## Screenshots
 
@@ -19,6 +27,15 @@ Play with sliders, zoom/pan the canvas, recolor the grid, and export the result 
 
 > Screenshot UI:  
 > ![](readme-images/screenshot_doge.png)
+
+## Features
+
+- Quadtree segmentation of images
+- Adjustable leaf size and standard deviation threshold
+- Zoom & pan the canvas
+- Customizable grid color, line width, and background color
+- Load images via drag-and-drop or file browser
+- Save compressed images to PNG
 
 ## Build & Run
 
@@ -33,6 +50,8 @@ Play with sliders, zoom/pan the canvas, recolor the grid, and export the result 
 
 ### Linux / macOS
 
+## Using cmake
+
 ```bash
 git clone https://github.com/ArtStyle19/quadtree-image-compression.git
 cd quadtree-image-compression
@@ -43,6 +62,20 @@ cmake --build build -j
 
 # run
 ./build/bin/quadtree_viewer images/image.png
+```
+
+## Using g++
+
+```bash
+g++ -std=c++17 src/main3.cpp \
+  include/imgui/imgui.cpp include/imgui/imgui_draw.cpp include/imgui/imgui_widgets.cpp include/imgui/imgui_tables.cpp \
+  include/imgui/backends/imgui_impl_glfw.cpp include/imgui/backends/imgui_impl_opengl2.cpp \
+  -Iinclude -Iinclude/imgui -Iinclude/imgui/backends \
+  -lglfw -lGL -ldl -lpthread -lX11 -lXrandr -lXi -lXxf86vm -lXcursor \
+  -o quadtree_viewer
+
+
+./quadtree_viewer
 ```
 
 ## Controls
