@@ -1,5 +1,9 @@
 # 🌀 Quadtree Image Compression
 
+## Developed by Jorge Guillermo Olarte Quispe
+
+## Universidad Nacional del Altiplano – Ingeniería de Sistemas
+
 A lightweight **C++ / OpenGL** app to visualize images using a **quadtree**.  
 It splits the image into blocks: **large blocks** for flat areas, **small blocks** for detail.  
 Play with sliders, zoom/pan the canvas, recolor the grid, and export the result as PNG.
